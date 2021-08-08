@@ -5,7 +5,7 @@ interface Props {
 }
 
 const EventCard = ({ event }: Props) => {
-  const date = event.timeslots[0].start_date * 1000;
+  const date = event.timeslots[0]?.start_date * 1000;
   return (
     <li className={styles.eventCard}>
       <p className={styles.date}>

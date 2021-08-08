@@ -3,7 +3,10 @@
 .listContainer {
   display: flex;
   flex-direction: column;
-  width: 50%;
+
+  @media (min-width: 576px) {
+    width: 50%;
+  }
 }
 
 .listView {

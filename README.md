@@ -8,6 +8,8 @@ All of the information is currently displayed on one page so that the user can v
 
 I decided to model the event cards off of the current Mobilize list view because it's a crisp way to present the information to the user. With more time, I would also model the map tooltips off of this style.
 
+I added a little bit of mobile styling to hide the map on initial page load and allow the user to toggle the map open if they want to help save screen real estate, since the map needs to be relatively large to be of any use. The scroll behavior is a little bit weird still, and given more time, I would like to come up with a different solution.
+
 ## Setup
 
 1. Clone this repository

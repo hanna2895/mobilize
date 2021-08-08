@@ -12,19 +12,35 @@ interface Props {
 const ListView = ({ events, nextUrl, prevUrl, setFetchUrl }: Props) => {
   return (
     <div className={styles.listContainer}>
-      <div className={styles.listView}>
+      <div className={styles.listView} id="listView">
         {events?.map((mobilizeEvent: MobilizeEvent) => (
           <EventCard event={mobilizeEvent} key={mobilizeEvent.id} />
         ))}
       </div>
       <div className={styles.pagination}>
         {prevUrl && (
-          <span onClick={() => setFetchUrl(prevUrl)}>
+          <span
+            onClick={() => {
+              document
+                .getElementById("listView")
+                ?.scroll({ top: 0, behavior: "smooth" });
+              setFetchUrl(prevUrl);
+            }}
+          >
             &lt;&lt; Previous Page
           </span>
         )}
         {nextUrl && (
-          <span onClick={() => setFetchUrl(nextUrl)}>Next Page &gt;&gt;</span>
+          <span
+            onClick={() => {
+              document
+                .getElementById("listView")
+                ?.scroll({ top: 0, behavior: "smooth" });
+              setFetchUrl(nextUrl);
+            }}
+          >
+            Next Page &gt;&gt;
+          </span>
         )}
       </div>
     </div>
