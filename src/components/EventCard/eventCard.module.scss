@@ -1,0 +1,18 @@
+@import "../../index.scss";
+
+.eventCard {
+  -webkit-box-shadow: 4px 2px 15px -1px rgba(0, 0, 0, 0.51);
+  box-shadow: 4px 2px 15px -1px rgba(0, 0, 0, 0.31);
+  list-style: none;
+  padding: 0.5rem;
+  margin: 1rem;
+
+  h2 {
+    margin: 0.5rem 0;
+  }
+}
+
+.date {
+  color: $mobilize-blue;
+  font-weight: bold;
+}
