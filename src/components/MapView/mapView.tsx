@@ -23,7 +23,7 @@ const MapView = ({ events }: Props) => {
       <Map
         style="mapbox://styles/mapbox/light-v10"
         containerStyle={{
-          height: "90vh",
+          height: "85vh",
           width: "100%",
         }}
         center={[-89.3985, 40.6331]}

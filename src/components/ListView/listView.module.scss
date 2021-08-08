@@ -1,5 +1,36 @@
-.listView {
-  height: 90vh;
-  overflow: scroll;
+@import "../../index.scss";
+
+.listContainer {
+  display: flex;
+  flex-direction: column;
   width: 50%;
+}
+
+.listView {
+  height: 80vh;
+  overflow: scroll;
+}
+
+.pagination {
+  background-color: rgb(249, 249, 249);
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+
+  span {
+    color: $mobilize-blue;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 0 0.5rem;
+    padding: 0.5rem;
+    text-align: center;
+    width: 10rem;
+
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
 }

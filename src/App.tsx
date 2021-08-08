@@ -7,18 +7,36 @@ import { useEffect } from "react";
 function App() {
   const [events, setEvents] = useState();
 
+  // when we fetch the data for the first time, use the original url
+  const baseUrl = `https://api.mobilize.us/v1/organizations/1/events`;
+  const [fetchUrl, setFetchUrl] = useState(baseUrl);
+  const [nextUrl, setNextUrl] = useState<string | null>(null);
+  const [prevUrl, setPrevUrl] = useState<string | null>(null);
+
   useEffect(() => {
-    fetch(`https://api.mobilize.us/v1/organizations/1/events`)
+    fetch(fetchUrl)
       .then((response) => response.json())
-      .then((data) => setEvents(data.data))
+      .then((data) => {
+        // capture the data and pass it to the list and map components
+        // save the next and previous urls
+        // this is split into three pieces to help the components rerender as necessary
+        setEvents(data.data);
+        setNextUrl(data.next);
+        setPrevUrl(data.previous);
+      })
       .catch((error) => console.log(error));
-  }, []);
+  }, [fetchUrl]);
 
   return (
     <div className={styles.App}>
       <h1>Events Nearby</h1>
       <div className={styles.mainContent}>
-        <ListView events={events} />
+        <ListView
+          events={events}
+          nextUrl={nextUrl}
+          prevUrl={prevUrl}
+          setFetchUrl={setFetchUrl}
+        />
         <MapView events={events} />
       </div>
     </div>
