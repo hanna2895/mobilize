@@ -21,8 +21,3 @@ I added a little bit of mobile styling to hide the map on initial page load and 
 
 3. run `yarn` to install dependencies
 4. run `yarn start` to run the server locally
-
-## todo:
-
-mobile styling
-email about upcoming events
