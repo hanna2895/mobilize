@@ -8,7 +8,7 @@ function App() {
   const [events, setEvents] = useState();
 
   // when we fetch the data for the first time, use the original url
-  const baseUrl = `https://api.mobilize.us/v1/organizations/1/events`;
+  const baseUrl = `https://api.mobilize.us/v1/events?timeslot_start=gte_now`;
   const [fetchUrl, setFetchUrl] = useState(baseUrl);
   const [nextUrl, setNextUrl] = useState<string | null>(null);
   const [prevUrl, setPrevUrl] = useState<string | null>(null);

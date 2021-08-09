@@ -16,15 +16,16 @@
 
 .pagination {
   background-color: rgb(249, 249, 249);
-  padding: 1rem;
   display: flex;
   justify-content: center;
+  padding: 1rem;
 
   span {
     color: $mobilize-blue;
     background-color: white;
     border: 1px solid lightgray;
     border-radius: 5px;
+    font-size: 0.8rem;
     font-weight: bold;
     margin: 0 0.5rem;
     padding: 0.5rem;
